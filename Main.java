@@ -1,3 +1,9 @@
+/*
+IS 4010: Lab 8
+Partners: Alec Rezelj, Kiley Hardcorn
+Date: March 30, 2021
+*/
+
 import javax.swing.*;
 
 class Main {

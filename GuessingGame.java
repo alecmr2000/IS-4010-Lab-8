@@ -1,3 +1,9 @@
+/*
+IS 4010: Lab 8
+Partners: Alec Rezelj, Kiley Hardcorn
+Date: March 30, 2021
+*/
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -13,7 +19,7 @@ public class GuessingGame implements ActionListener {
 
     GuessingGame() {
         Random r = new Random();
-        r_RandomNum = r.nextInt(101);
+        r_RandomNum = r.nextInt(100) + 1;
         // Above is initalizing and storing the random number.
 
         JFrame frame = new JFrame("Guessing Game");
@@ -71,21 +77,21 @@ public class GuessingGame implements ActionListener {
 
         else if (ae.getActionCommand().equals("Play Again")) {
             Random r = new Random();
-            r_RandomNum = r.nextInt(101);
-            //Above is creating a new random number.
+            r_RandomNum = r.nextInt(100) + 1;
+            // Above is creating a new random number.
 
             Prompt.setText("Enter your Guess");
             Advice.setText("");
             Reminder.setText("");
-            //Above is resetting the labels.
+            // Above is resetting the labels.
 
             userGuess.setText("");
-            //Above is resetting user input box.
+            // Above is resetting user input box.
         }
 
         else {
             Advice.setText("You pressed Enter. Please press the Guess Button.");
         }
-        //Above is what occurs if user presses enter.
+        // Above is what occurs if user presses enter.
     }
 }
