@@ -56,9 +56,9 @@ public class GuessingGame implements ActionListener {
             int guess = Integer.parseInt(userGuess.getText());
             // Above is converting and storing user input.
 
-            if (guess > r_RandomNum) {
+            if (guess < r_RandomNum) {
                 Advice.setText("Too low!");
-            } else if (guess < r_RandomNum) {
+            } else if (guess > r_RandomNum) {
                 Advice.setText("Too high!");
             } else if (guess == r_RandomNum) {
                 Advice.setText("You got it!");
@@ -69,18 +69,23 @@ public class GuessingGame implements ActionListener {
             // Above is displaying the user's guess.
         }
 
-        if (ae.getActionCommand().equals("Play Again")) {
+        else if (ae.getActionCommand().equals("Play Again")) {
             Random r = new Random();
             r_RandomNum = r.nextInt(101);
+            //Above is creating a new random number.
 
             Prompt.setText("Enter your Guess");
             Advice.setText("");
             Reminder.setText("");
+            //Above is resetting the labels.
 
             userGuess.setText("");
+            //Above is resetting user input box.
         }
+
         else {
             Advice.setText("You pressed Enter. Please press the Guess Button.");
         }
+        //Above is what occurs if user presses enter.
     }
 }
